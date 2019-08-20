@@ -12,6 +12,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(resolve => {
         let tab = document.querySelector('.topics')
         let topic = resolve.data.topics;
+
         topic.forEach(listItem => {
             let item = document.createElement('div')
             item.classList.add('tab');
@@ -21,7 +22,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
         
         return tab
     })
-        .catch(error => {
+    .catch(error => {
         console.error(error)
     });
     
